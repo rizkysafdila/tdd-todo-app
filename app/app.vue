@@ -32,15 +32,13 @@ useSeoMeta({
         <NuxtLink to="/">
           <AppLogo class="w-auto h-6 shrink-0" />
         </NuxtLink>
-
-        <TemplateMenu />
       </template>
 
       <template #right>
         <UColorModeButton />
 
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="https://github.com/rizkysafdila/tdd-todo-app"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
@@ -65,7 +63,7 @@ useSeoMeta({
 
       <template #right>
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="https://github.com/rizkysafdila/tdd-todo-app"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
