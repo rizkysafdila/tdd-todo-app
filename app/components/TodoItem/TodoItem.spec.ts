@@ -19,21 +19,25 @@ describe('TodoItem', () => {
     })
   })
 
-  it('should render todo title', async () => {
+  it.concurrent('should render todo title', async () => {
     expect(wrapper.text()).toContain('Test todo')
   })
 
-  it('should emit toggle event when checkbox is clicked', async () => {
-    await wrapper.find('input[type="checkbox"]').trigger('change')
+  it.concurrent('should emit toggle event when checkbox is clicked', async () => {
+    const checkbox = wrapper.find('#completedToggle')
+    await checkbox.trigger('click')
+
     expect(wrapper.emitted('toggle')).toBeTruthy()
   })
 
-  it('should emit delete event when delete button is clicked', async () => {
-    await wrapper.find('button').trigger('click')
+  it.concurrent('should emit delete event when delete button is clicked', async () => {
+    const deleteBtn = wrapper.find('#deleteBtn')
+    await deleteBtn.trigger('click')
+
     expect(wrapper.emitted('delete')).toBeTruthy()
   })
 
-  it('should apply line-through style for completed todos', async () => {
+  it.concurrent('should apply line-through style for completed todos', async () => {
     const completedTodo = { ...mockTodo, completed: true }
     const wrapper = await mountSuspended(TodoItem, {
       props: { todo: completedTodo }
