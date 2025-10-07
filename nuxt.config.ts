@@ -9,6 +9,12 @@ export default defineNuxtConfig({
     '@pinia/nuxt'
   ],
 
+  imports: {
+    dirs: [
+      'stores/**'
+    ]
+  },
+
   devtools: {
     enabled: true
   },
