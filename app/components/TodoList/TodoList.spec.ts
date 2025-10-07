@@ -8,12 +8,12 @@ describe('TodoList', () => {
     setActivePinia(createPinia())
   })
 
-  it('should render empty state when no todos', async () => {
+  it.concurrent('should render empty state when no todos', async () => {
     const wrapper = await mountSuspended(TodoList, { props: { todos: [] } })
     expect(wrapper.text()).toContain('No todos yet')
   })
 
-  it('should render todos when available', async () => {
+  it.concurrent('should render todos when available', async () => {
     const todos = [
       { id: '1', title: 'Todo 1', completed: false, createdAt: new Date() },
       { id: '2', title: 'Todo 2', completed: true, createdAt: new Date() }
